@@ -5,10 +5,10 @@ import {FiShoppingCart} from "react-icons/fi";
 
 const Header = () => {
   return (
-    <div className="full-bleed bg-[#C7E4F2]">
+    <div className="full-bleed bg-[#C7E4F2] px-4 py-8">
       <header className="flex flex-col sm:flex-row gap-4 items-center justify-between">
         <Logo />
-        <div className="flex gap-4">
+        <div className="flex gap-4 w-full">
           <form action="/" className="flex items-center w-full">
             <input
               type="search"
