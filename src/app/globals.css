@@ -8,8 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-gudea);
 }
 /* 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +21,30 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  margin: 0;
+  display: grid;
+  grid-template-columns:
+    [full-start]minmax(1rem, 1fr)
+    [content-start]
+    minmax(0, 700px)
+    [center]
+    minmax(0, 700px)
+    [content-end]
+    minmax(1rem, 1fr) [full-end];
+}
+
+.full-bleed,
+main {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: full-start / full-end;
+
+  > * {
+    grid-column: content-start / content-end;
+  }
+
+  .full-bleed > header {
+    display: flex;
+  }
 }
