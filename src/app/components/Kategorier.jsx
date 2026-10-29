@@ -1,5 +1,5 @@
 const Kategorier = () => {
-  return <div>Noget</div>;
+  return <div className="full-bleed">Noget andet</div>;
 };
 
 export default Kategorier;

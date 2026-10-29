@@ -1,17 +1,14 @@
-import {Geist, Geist_Mono} from "next/font/google";
+import {Gudea} from "next/font/google";
 import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Kategorier from "@/app/components/Kategorier";
+import Navigation from "@/app/components/Navigation";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const gudea = Gudea({
+  weight: ["400", "700"],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-gudea",
 });
 
 export const metadata = {
@@ -21,12 +18,10 @@ export const metadata = {
 
 export default function RootLayout({children}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${gudea.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Header />
+        <Navigation />
         <Kategorier />
         <main>{children}</main>
         <Footer />
