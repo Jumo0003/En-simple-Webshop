@@ -20,8 +20,8 @@ export default function RootLayout({children}) {
   return (
     <html lang="en" className={`${gudea.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <Header />
         <Navigation />
+        <Header />
         <Kategorier />
         <main>{children}</main>
         <Footer />
