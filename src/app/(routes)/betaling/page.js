@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DineVarer from "@/app/components/(produkter)/DineVarer";
-import FavoritListe from "@/app/components/(produkter)/FavoritListe";
+import FavoritListe from "@/app/components/(produkter)/LikedListe";
 import BetalingAccordion from "@/app/components/BetalingAccordion";
 import BetalKnap from "@/app/components/(knapper)/BetalKnap";
 import BelobSektion from "@/app/components/BelobSektion";

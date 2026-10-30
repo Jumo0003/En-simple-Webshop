@@ -131,6 +131,7 @@ export default function ProduktListeClient({products}) {
           {alleProdukter.map((product) => (
             <Produkt
               key={product.id}
+              id={product.id}
               billede={product.thumbnail}
               produktnavn={product.title}
               brand={product.brand}

@@ -1,7 +1,17 @@
 import KurvKobKnapper from "../(knapper)/KurvKobKnapper";
 import Image from "next/image";
+import HeartBtn from "../(knapper)/HeartBtn";
 
-const Produkt = ({produktnavn, brand, pris, tilbud, lager, billede, alt}) => {
+const Produkt = ({
+  produktnavn,
+  brand,
+  pris,
+  tilbud,
+  lager,
+  billede,
+  alt,
+  id,
+}) => {
   return (
     <article className="bg-[#D4E7F1] shadow-xl cursor-pointer transition-colors duration-400 hover:bg-[#c1d3dd] text-[#456695] rounded-xl">
       <Image
@@ -33,6 +43,9 @@ const Produkt = ({produktnavn, brand, pris, tilbud, lager, billede, alt}) => {
 
         <KurvKobKnapper />
       </div>
+      <HeartBtn
+        product={{id, produktnavn, brand, pris, tilbud, lager, billede}}
+      />
     </article>
   );
 };
