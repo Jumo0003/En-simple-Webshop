@@ -1,7 +1,7 @@
 import ProduktListeClient from "@/app/components/(produkter)/ProduktListeClient";
 
 export default async function ProductList({searchParams}) {
-  const {category} = await searchParams;
+  const {category, query} = await searchParams;
 
   const categoryGroups = {
     accessories: [
@@ -22,7 +22,24 @@ export default async function ProductList({searchParams}) {
 
   let products;
 
-  if (category) {
+  if (query) {
+    const params = new URLSearchParams({
+      q: query,
+      limit: "150",
+    });
+
+    const response = await fetch(
+      `https://dummyjson.com/products/search?${params}`,
+    );
+
+    if (!response.ok) {
+      throw new Error("Kunne ikke søge efter produkter");
+    }
+
+    const productsData = await response.json();
+
+    products = productsData.products;
+  } else if (category) {
     const apiCategories = categoryGroups[category] ?? [category];
 
     const responses = await Promise.all(
@@ -56,15 +73,22 @@ export default async function ProductList({searchParams}) {
   return (
     <div className="text-center flex flex-col gap-4 text-[#456695] py-8">
       <h1 className="text-4xl font-bold">
-        {category
-          ? category.charAt(0).toUpperCase() + category.slice(1)
-          : "Alle produkter"}
+        {query
+          ? `Søgeresultater for "${query}"`
+          : category
+            ? category.charAt(0).toUpperCase() + category.slice(1)
+            : "Alle produkter"}
       </h1>
 
-      <ProduktListeClient key={category ?? "all"} products={products} />
+      <ProduktListeClient
+        key={`${category ?? "all"}-${query ?? ""}`}
+        products={products}
+      />
     </div>
   );
 }
+
+//URLSearchParams laver URL-parametre ud fra de værdier den får, så her opretter den q og limits fx: ?q=phone&limit=150
 
 //apiCategories = brug kategorilisten fra categoryGroups hvis den findes ellers lav en liste med den valgta kategori alene
 //responses = sender én request for hver kategori i apiCategories, så hver "underkategori" kommer i sit eget url
