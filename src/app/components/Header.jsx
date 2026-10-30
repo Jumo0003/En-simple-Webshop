@@ -9,7 +9,7 @@ const Header = () => {
       <header className="flex flex-col sm:flex-row gap-4 items-center justify-between">
         <Logo />
         <div className="flex gap-4 w-full">
-          <form action="/" className="flex items-center w-full">
+          <form action="/produkter" className="flex items-center w-full">
             <input
               type="search"
               name="query"
