@@ -60,3 +60,37 @@ main {
     @apply bg-(--head-foot-color);
   }
 }
+
+.cart-button {
+  anchor-name: --cart-button;
+}
+
+.cart-popover {
+  position: fixed;
+  position-anchor: --cart-button;
+  inset: auto;
+  top: anchor(--cart-button bottom);
+  right: anchor(--cart-button right);
+  margin-top: 0.5rem;
+}
+
+.menu-button {
+  anchor-name: --menu-button;
+}
+
+.menu-popover {
+  position: fixed;
+  position-anchor: --menu-button;
+  inset: auto;
+  top: anchor(--menu-button bottom);
+  right: anchor(--menu-button right);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .cart-popover,
+  .menu-popover {
+    left: 1rem;
+    right: auto;
+  }
+}

@@ -2,6 +2,8 @@ import Logo from "@/app/components/(knapper)/Logo";
 import {FiSearch} from "react-icons/fi";
 import {SlMenu} from "react-icons/sl";
 import {FiShoppingCart} from "react-icons/fi";
+import KurvPopover from "@/app/components/KurvPopover";
+import MenuPopover from "@/app/components/MenuPopover";
 
 const Header = () => {
   return (
@@ -25,15 +27,23 @@ const Header = () => {
           </form>
 
           <div className="flex gap-2">
-            <button className="transition-colors duration-400 bg-[#9FC5D9] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-full p-3  text-white">
+            <button
+              popoverTarget="kurv"
+              className="cart-button transition-colors duration-400 bg-[#9FC5D9] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-full p-3  text-white"
+            >
               <FiShoppingCart className="size-7" />
             </button>
-            <button className="transition-colors duration-400 bg-[#9FC5D9] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-full p-3  text-white">
+            <button
+              popoverTarget="menu"
+              className="menu-button transition-colors duration-400 bg-[#9FC5D9] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-full p-3  text-white"
+            >
               <SlMenu className="size-7" />
             </button>
           </div>
         </div>
       </header>
+      <KurvPopover />
+      <MenuPopover />
     </div>
   );
 };
