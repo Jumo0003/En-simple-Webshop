@@ -15,10 +15,11 @@ export default function Payment() {
 
       <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4">
         <BetalingAccordion />
-        <BelobSektion />
+        <div className="flex flex-col gap-4">
+          <BelobSektion />
+          <BetalKnap />
+        </div>
       </div>
-
-      <BetalKnap />
     </div>
   );
 }
