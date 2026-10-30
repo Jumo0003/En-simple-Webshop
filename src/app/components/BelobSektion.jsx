@@ -1,5 +1,5 @@
 const BelobIAlt = () => {
-  return <div>Noget</div>;
+  return <section className="text-xl bg-[#D4E7F1] p-4 rounded-xl"></section>;
 };
 
 export default BelobIAlt;
