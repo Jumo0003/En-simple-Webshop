@@ -2,8 +2,8 @@ import Logo from "@/app/components/(knapper)/Logo";
 
 const Footer = () => {
   return (
-    <div className="full-bleed bg-head-foot mt-4">
-      <footer className="  px-4 py-8 flex  gap-4 items-start justify-between">
+    <div className="full-bleed text-[#2e4565] bg-head-foot mt-4">
+      <footer className="px-4 py-8 flex flex-col justify-center md:flex-row gap-4 items-start md:justify-between">
         <div>
           <h4 className="font-bold">Kontakt</h4>
           <ul>
