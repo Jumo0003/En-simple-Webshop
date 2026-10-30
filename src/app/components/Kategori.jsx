@@ -1,7 +1,10 @@
-const Kategori = ({kategori}) => {
+import Link from "next/link";
+const Kategori = ({kategori, label}) => {
   return (
-    <li className="bg-[#7FB1D0] hover:bg-[#6ea1c1] hover:text-[#2e4b74] p-2 px-8 transition-colors rounded-xl duration-400">
-      {kategori}
+    <li className="bg-[#7FB1D0] hover:bg-[#6ea1c1] hover:text-[#2e4b74] p-2 px-6 transition-colors rounded-xl duration-400">
+      <Link href={`/produkter?category=${encodeURIComponent(kategori)}`}>
+        {label ?? kategori}
+      </Link>
     </li>
   );
 };

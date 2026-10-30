@@ -14,7 +14,7 @@ const Header = () => {
               type="search"
               name="query"
               placeholder="Search products ..."
-              className="p-4 bg-[#E8F2F5] border-none border-2 rounded-l-xl w-full focus:outline-none focus:ring-[#9FC5D9]"
+              className="p-4 bg-[#E8F2F5] border-none rounded-l-xl w-full focus:outline-none focus:ring-[#9FC5D9]"
             ></input>
             <button
               type="submit"
