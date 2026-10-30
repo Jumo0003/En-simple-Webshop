@@ -12,10 +12,10 @@ const BetalingAccordion = () => {
   const betalingRef = useRef(null);
 
   const leveringOptions = [
-    {value: "all", label: "Posthus/pakkeboks - NordPost"},
-    {value: "discount", label: "Levering til butik"},
-    {value: "discount2", label: "Hjemmelevering [Lørdag]"},
-    {value: "soldout", label: "Hjemmelevering - NordPost"},
+    {value: "all", label: "Post office/parcel locker - NordPost"},
+    {value: "discount", label: "Delivery to shop"},
+    {value: "discount2", label: "Home delivery (Saturday)"},
+    {value: "soldout", label: "Home delivery - NordPost"},
   ];
 
   const selectedLevering =
@@ -26,30 +26,30 @@ const BetalingAccordion = () => {
     <section className="text-xl bg-[#D4E7F1] p-4 rounded-xl">
       <details ref={oplysningerRef} open>
         <summary className="text-[#2e4565] pb-4 border-b border-[#2e45652d] text-2xl font-bold rounded-t-xl cursor-pointer">
-          Dine Oplysninger
+          Your Information
         </summary>
         <form className="text-md flex flex-col gap-4 text-[#2e4565] bg-[#e7eef2] p-4 rounded-b-xl">
           <legend className="flex flex-col gap-3">
-            Email til ordrebekræftelse
+            Email for order confirmation
             <input
               type="email"
-              placeholder="eksempel@mail.dk"
+              placeholder="example@mail.dk"
               className="bg-white p-2 rounded-xl border-[#a6bbc7] border-2 focus:outline-none focus:ring-[#9FC5D9]"
             />
           </legend>
 
           <legend className="flex flex-col gap-3">
-            Fulde navn
+            Full name
             <input
               type="text"
-              placeholder="Fornavn Efternavn"
+              placeholder="FirstName LastName"
               maxLength={200}
               className="bg-white p-2 rounded-xl border-[#a6bbc7] border-2 focus:outline-none focus:ring-[#9FC5D9]"
             />
           </legend>
 
           <legend className="flex flex-col gap-3">
-            Mobilnummer til opdatering på levering
+            Phone number for updates on delivery
             <input
               type="tel"
               placeholder="12345678"
@@ -59,10 +59,10 @@ const BetalingAccordion = () => {
           </legend>
 
           <legend className="flex flex-col gap-3">
-            Adresse
+            Adress
             <input
               type="number"
-              placeholder="Vejnavn 12, 1234 Bynavn"
+              placeholder="StreetName 12, 1234 CityName"
               className="bg-white p-2 rounded-xl border-[#a6bbc7] border-2 focus:outline-none focus:ring-[#9FC5D9]"
             />
           </legend>
@@ -77,7 +77,7 @@ const BetalingAccordion = () => {
             }}
             className="transition-colors duration-400 w-full bg-[#b1d1e1] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-xl p-3 text-white"
           >
-            Videre til levering
+            Continue to delivery
           </button>
         </form>
       </details>
@@ -89,11 +89,11 @@ const BetalingAccordion = () => {
           }}
           className="text-[#2e4565] py-4 border-b border-[#2e45652d] text-2xl font-bold rounded-t-xl cursor-pointer"
         >
-          Levering
+          Delivery
         </summary>
         <div className="text-md text-[#2e4565] bg-[#e7eef2] flex flex-col gap-4 p-4 rounded-b-xl">
           <fieldset className="flex flex-col gap-2">
-            <legend className="font-bold mb-4">Leveringsmetoder</legend>
+            <legend className="font-bold mb-4">Delivery methods</legend>
 
             {leveringOptions.map((option) => (
               <button
@@ -121,7 +121,7 @@ const BetalingAccordion = () => {
             }}
             className="transition-colors duration-400 w-full bg-[#b1d1e1] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-xl p-3 text-white"
           >
-            Benyt denne levering
+            Use this delivery
           </button>
         </div>
       </details>
@@ -133,15 +133,15 @@ const BetalingAccordion = () => {
           }}
           className="text-[#2e4565] py-4 border-b border-[#2e45652d] text-2xl font-bold rounded-t-xl cursor-pointer"
         >
-          Betaling
+          Payment
         </summary>
         <form className="text-md text-[#2e4565] bg-[#e7eef2] p-4 rounded-b-xl">
           <legend className="flex flex-col gap-3 p-4">
-            <b>Faktureringsadresse</b> <p>Vejnavn 12, 1234 Bynavn</p>
+            <b>Billing adress</b> <p>StreetName 12, 1234 CityName</p>
           </legend>
 
           <legend className="flex flex-col p-4 gap-3">
-            <b> Betal med</b>
+            <b> Pay with</b>
             <div className="flex gap-1 flex-wrap">
               <div
                 className="w-16 aspect-video bg-red-300 rounded-sm"
@@ -163,7 +163,7 @@ const BetalingAccordion = () => {
           </legend>
 
           <legend className="flex flex-col gap-3 p-4 text-sm underline hover:text-green-900 cursor-pointer">
-            Tilføj gavekort?
+            Apply gift card?
           </legend>
 
           <legend className="flex flex-col gap-3 p-4">
@@ -172,9 +172,7 @@ const BetalingAccordion = () => {
                 type="checkbox"
                 className="bg-white size-8 p-4 rounded-xl accent-[#4c6f86] border-[#a6bbc7] border-2 focus:outline-none focus:ring-[#9FC5D9]"
               />
-              <h2>
-                Jeg accepterer Løtex' handelsbetingelser og privatlivspolitik
-              </h2>
+              <h2>I accept Løtex' Terms & conditions and privacy policy</h2>
             </div>
             <p className="text-sm text-gray-500">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio,
