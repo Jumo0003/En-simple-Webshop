@@ -14,6 +14,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-gudea);
+  --font-logo: var(--font-fungis);
   --head-foot: var(--head-foot-color);
 }
 /* 
