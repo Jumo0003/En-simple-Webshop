@@ -8,11 +8,14 @@
   --accent: #7fb1d0;
   --text-color: #4f85ac;
   --head-foot-color: #c7e4f2;
+  --bold-blue: #9abdd6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --logo: var(--bold-blue);
+  --text: var(--text-color);
   --font-sans: var(--font-gudea);
   --font-logo: var(--font-fungis);
   --head-foot: var(--head-foot-color);
