@@ -98,3 +98,13 @@ main {
     right: auto;
   }
 }
+
+/* Fjerner standardpilen i moderne browsere */
+summary {
+  list-style: none;
+}
+
+/* Fjerner standardpilen i ældre versioner af Safari og Chrome */
+summary::-webkit-details-marker {
+  display: none;
+}

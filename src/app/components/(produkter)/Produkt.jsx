@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Produkt = ({produktnavn, brand, pris, tilbud, lager, billede, alt}) => {
   return (
-    <article className="bg-[#D4E7F1] text-[#456695] rounded-xl">
+    <article className="bg-[#D4E7F1] shadow-xl cursor-pointer transition-colors duration-400 hover:bg-[#c1d3dd] text-[#456695] rounded-xl">
       <Image
         src={billede}
         width={300}
