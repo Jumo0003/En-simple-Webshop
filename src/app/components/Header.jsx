@@ -3,7 +3,9 @@ import {FiSearch} from "react-icons/fi";
 import {SlMenu} from "react-icons/sl";
 import {FiShoppingCart} from "react-icons/fi";
 import KurvPopover from "@/app/components/KurvPopover";
+import LikedPopover from "@/app/components/LikedPopover";
 import MenuPopover from "@/app/components/MenuPopover";
+import {FaRegHeart} from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -16,7 +18,7 @@ const Header = () => {
               type="search"
               name="query"
               placeholder="Search products ..."
-              className="p-4 bg-[#E8F2F5] border-none rounded-l-xl w-full focus:outline-none focus:ring-[#9FC5D9]"
+              className="p-4 bg-white rounded-l-sm border-none w-full focus:outline-none focus:ring-[#9FC5D9]"
             ></input>
             <button
               type="submit"
@@ -34,6 +36,12 @@ const Header = () => {
               <FiShoppingCart className="size-7" />
             </button>
             <button
+              popoverTarget="liked"
+              className="liked-button transition-colors duration-400 bg-[#9FC5D9] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-full p-3  text-white"
+            >
+              <FaRegHeart className="size-7" />
+            </button>
+            <button
               popoverTarget="menu"
               className="menu-button transition-colors duration-400 bg-[#9FC5D9] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-full p-3  text-white"
             >
@@ -43,6 +51,7 @@ const Header = () => {
         </div>
       </header>
       <KurvPopover />
+      <LikedPopover />
       <MenuPopover />
     </div>
   );

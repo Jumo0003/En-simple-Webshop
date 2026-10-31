@@ -71,7 +71,7 @@ export default async function ProductList({searchParams}) {
   }
 
   return (
-    <div className="text-center flex flex-col gap-4 text-[#456695] py-8">
+    <div className="text-left flex flex-col gap-4 text-[#456695] py-8">
       <h1 className="text-4xl font-bold">
         {query
           ? `Søgeresultater for "${query}"`

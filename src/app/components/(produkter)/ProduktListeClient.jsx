@@ -56,10 +56,10 @@ export default function ProduktListeClient({products}) {
   }
 
   return (
-    <>
-      <div className="flex flex-wrap justify-center gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-1 justify-center gap-3 self-start h-fit md:sticky md:top-65">
         <button
-          className="transition-colors hover:shadow-xl duration-400 bg-[#b1d1e1] px-8 hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-xl p-3 text-white"
+          className="transition-colors shadow-xl duration-400 text-[#456695] bg-white px-8 hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out p-3"
           type="button"
           onClick={() =>
             setSortering((current) => (current === "name" ? "name2" : "name"))
@@ -69,7 +69,7 @@ export default function ProduktListeClient({products}) {
         </button>
 
         <button
-          className="transition-colors hover:shadow-xl duration-400 bg-[#b1d1e1] px-8 hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-xl p-3 text-white"
+          className="transition-colors shadow-xl duration-400 bg-white px-8 hover:bg-[#94b9cd] active:bg-[#94b9cd] text-[#456695] active:text-[#456695] ease-in-out p-3"
           type="button"
           onClick={() =>
             setSortering((current) =>
@@ -84,7 +84,7 @@ export default function ProduktListeClient({products}) {
           <button
             type="button"
             onClick={() => setFilterOpen((open) => !open)}
-            className="rounded-xl transition-colors hover:shadow-xl duration-400 bg-[#b1d1e1] px-8 py-3 text-white hover:bg-[#94b9cd] hover:text-[#456695]"
+            className="transition-colors w-full shadow-xl duration-400 bg-white px-8 py-3 text-[#456695] hover:bg-[#94b9cd]"
           >
             {selectedFilter} <span aria-hidden="true">▾</span>
           </button>
@@ -113,7 +113,7 @@ export default function ProduktListeClient({products}) {
         </div>
 
         <button
-          className="transition-colors hover:shadow-xl duration-400 bg-[#b1d1e1] px-8 hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-xl p-3  text-white"
+          className="transition-colors shadow-xl duration-400 bg-white px-8 hover:bg-[#94b9cd] active:bg-[#94b9cd] text-[#456695] active:text-[#456695] ease-in-out p-3"
           type="button"
           onClick={() => {
             setFilter("all");
@@ -127,7 +127,7 @@ export default function ProduktListeClient({products}) {
       {alleProdukter.length === 0 ? (
         <IngenProdukter />
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 justify-center gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 justify-center gap-4">
           {alleProdukter.map((product) => (
             <Produkt
               key={product.id}
@@ -143,6 +143,8 @@ export default function ProduktListeClient({products}) {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }
+
+//knappers bg før: [#D4E7F1]

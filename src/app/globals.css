@@ -9,7 +9,6 @@
   --text-color: #4f85ac;
   --head-foot-color: #c7e4f2;
   --bold-blue: #9abdd6;
-  --suu: #e3f7f2b8;
 }
 
 @theme inline {
@@ -32,7 +31,7 @@
 body {
   /* background: var(--background); */
   color: var(--foreground);
-  background: #e8f4f4;
+  background: #d9e3e8;
   margin: 0;
   display: grid;
   grid-template-columns:
@@ -49,9 +48,9 @@ body {
 main {
   display: grid;
   grid-template-columns: subgrid;
-  grid-column: full-start / full-end;
+  grid-column: 1 / -1;
 
-  > * {
+  > :not(.full-bleed) {
     grid-column: content-start / content-end;
   }
 
@@ -70,13 +69,18 @@ main {
   anchor-name: --cart-button;
 }
 
-.cart-popover {
+.cart-popover,
+.menu-popover,
+.liked-popover {
   position: fixed;
-  position-anchor: --cart-button;
   inset: auto;
+  margin-top: 0.5rem;
+}
+
+.cart-popover {
+  position-anchor: --cart-button;
   top: anchor(--cart-button bottom);
   right: anchor(--cart-button right);
-  margin-top: 0.5rem;
 }
 
 .menu-button {
@@ -84,17 +88,25 @@ main {
 }
 
 .menu-popover {
-  position: fixed;
   position-anchor: --menu-button;
-  inset: auto;
   top: anchor(--menu-button bottom);
   right: anchor(--menu-button right);
-  margin-top: 0.5rem;
+}
+
+.liked-button {
+  anchor-name: --liked-button;
+}
+
+.liked-popover {
+  position-anchor: --liked-button;
+  top: anchor(--liked-button bottom);
+  right: anchor(--liked-button right);
 }
 
 @media (max-width: 767px) {
   .cart-popover,
-  .menu-popover {
+  .menu-popover,
+  .liked-popover {
     left: 1rem;
     right: auto;
   }

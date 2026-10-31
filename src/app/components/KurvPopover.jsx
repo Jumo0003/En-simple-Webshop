@@ -7,7 +7,7 @@ const KurvPopover = () => {
     <div
       popover="auto"
       id="kurv"
-      className="bg-[#f1f6f6] w-[calc(100vw-2rem)] m-0 md:w-100 text-[#2e4565] p-4 cart-popover rounded-xl fixed mt-4 shadow-md"
+      className="bg-[#f1f6f6] w-[calc(100vw-2rem)] m-0 md:w-100 text-[#2e4565] p-4 cart-popover fixed mt-4 shadow-md"
     >
       <div className="flex flex-col gap-4">
         <div className="flex justify-between">
