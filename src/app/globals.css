@@ -60,6 +60,10 @@ main {
   }
 }
 
+main > .full-bleed {
+  grid-column: full-start / full-end;
+}
+
 @layer components {
   .bg-head-foot {
     @apply bg-(--head-foot-color);
