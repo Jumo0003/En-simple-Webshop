@@ -33,10 +33,10 @@ export default function RootLayout({children}) {
       lang="en"
       className={`${gudea.variable} ${fungis.variable} h-full antialiased`}
     >
-      <body className={`${gudea.className} min-h-full flex flex-col`}>
+      <body className={`${gudea.className} min-h-full`}>
         <Navigation />
         <Info />
-        <div className="md:sticky top-0 full-bleed z-50">
+        <div className="lg:sticky top-0 full-bleed z-50">
           <Header />
           <Kategorier />
         </div>

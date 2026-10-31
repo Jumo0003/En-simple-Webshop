@@ -57,7 +57,7 @@ export default function ProduktListeClient({products}) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4">
-      <div className="grid grid-cols-2 md:grid-cols-1 justify-center gap-3 self-start h-fit md:sticky md:top-65">
+      <div className="grid grid-cols-2 md:grid-cols-1 justify-center gap-3 self-start h-fit md:sticky md:top-60">
         <button
           className="transition-colors shadow-xl duration-400 text-[#456695] bg-white px-8 hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out p-3"
           type="button"
