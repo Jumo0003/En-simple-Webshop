@@ -5,11 +5,11 @@ import BilledTekst from "@/app/components/BilledTekst";
 
 export default function Home() {
   return (
-    <div className="text-7xl">
+    <>
       <TilbudBanner />
       <ProduktKarussel />
       <BilledTekst />
       <BilledTekst />
-    </div>
+    </>
   );
 }
