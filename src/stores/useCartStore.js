@@ -16,4 +16,8 @@ export const useCartStore = create((set) => ({
         kurv: [...state.kurv, { ...product, antal: 1 }],
       };
     }),
+  removeFromCart: (id) =>
+    set((state) => ({
+      kurv: state.kurv.filter((vare) => vare.id !== id),
+    })),
 }));
