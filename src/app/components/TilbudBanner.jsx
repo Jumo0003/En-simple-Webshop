@@ -18,8 +18,6 @@ const TilbudBanner = async () => {
         </div>
         <div className="items-left">
           <Image width={300} height={300} src={tilbud.thumbnail} alt={tilbud.title} />
-        <div className="">
-          <img className="items-end " src={tilbud.thumbnail} alt={tilbud.title} />
         </div>
       </div>
     </div>
