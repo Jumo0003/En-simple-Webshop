@@ -23,7 +23,7 @@ const BetalingAccordion = () => {
     "All products";
 
   return (
-    <section className="text-xl bg-[#D4E7F1] p-4 rounded-xl">
+    <section className="text-xl bg-white p-4 shadow-xl">
       <details ref={oplysningerRef} open>
         <summary className="text-[#2e4565] pb-4 border-b border-[#2e45652d] text-2xl font-bold rounded-t-xl cursor-pointer">
           Your Information
@@ -34,7 +34,7 @@ const BetalingAccordion = () => {
             <input
               type="email"
               placeholder="example@mail.dk"
-              className="bg-white p-2 rounded-xl border-[#a6bbc7] border-2 focus:outline-none focus:ring-[#9FC5D9]"
+              className="bg-white p-2 rounded-sm text-sm border-[#a6bbc7] border focus:outline-none focus:ring-[#9FC5D9]"
             />
           </legend>
 
@@ -44,7 +44,7 @@ const BetalingAccordion = () => {
               type="text"
               placeholder="FirstName LastName"
               maxLength={200}
-              className="bg-white p-2 rounded-xl border-[#a6bbc7] border-2 focus:outline-none focus:ring-[#9FC5D9]"
+              className="bg-white p-2 rounded-sm text-sm border-[#a6bbc7] border focus:outline-none focus:ring-[#9FC5D9]"
             />
           </legend>
 
@@ -54,7 +54,7 @@ const BetalingAccordion = () => {
               type="tel"
               placeholder="12345678"
               maxLength={8}
-              className="bg-white p-2 rounded-xl border-[#a6bbc7] border-2 focus:outline-none focus:ring-[#9FC5D9]"
+              className="bg-white p-2 rounded-sm text-sm border-[#a6bbc7] border focus:outline-none focus:ring-[#9FC5D9]"
             />
           </legend>
 
@@ -63,7 +63,7 @@ const BetalingAccordion = () => {
             <input
               type="number"
               placeholder="StreetName 12, 1234 CityName"
-              className="bg-white p-2 rounded-xl border-[#a6bbc7] border-2 focus:outline-none focus:ring-[#9FC5D9]"
+              className="bg-white p-2 rounded-sm text-sm border-[#a6bbc7] border focus:outline-none focus:ring-[#9FC5D9]"
             />
           </legend>
 
@@ -75,7 +75,7 @@ const BetalingAccordion = () => {
               leveringRef.current.open = true;
               oplysningerRef.current.open = false;
             }}
-            className="transition-colors duration-400 w-full bg-[#b1d1e1] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-xl p-3 text-white"
+            className="transition-colors duration-400 w-full bg-[#b1d1e1] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-sm p-3 text-white"
           >
             Continue to delivery
           </button>
@@ -100,7 +100,7 @@ const BetalingAccordion = () => {
                 key={option.value}
                 type="button"
                 onClick={() => setLevering(option.value)}
-                className={`rounded-xl p-4 text-left ${
+                className={`p-4 text-left ${
                   levering === option.value
                     ? "bg-[#94b9cd] text-[#456695]"
                     : "bg-white text-[#456695] hover:bg-[#e6f0f5]"
@@ -119,7 +119,7 @@ const BetalingAccordion = () => {
               betalingRef.current.open = true;
               leveringRef.current.open = false;
             }}
-            className="transition-colors duration-400 w-full bg-[#b1d1e1] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-xl p-3 text-white"
+            className="transition-colors duration-400 w-full bg-[#b1d1e1] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-sm p-3 text-white"
           >
             Use this delivery
           </button>

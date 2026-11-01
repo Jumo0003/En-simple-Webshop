@@ -5,6 +5,7 @@ import Footer from "@/app/components/Footer";
 import Kategorier from "@/app/components/Kategorier";
 import Navigation from "@/app/components/Navigation";
 import localFont from "next/font/local";
+import Info from "./components/InfoBånd";
 
 const gudea = Gudea({
   weight: ["400", "700"],
@@ -32,10 +33,13 @@ export default function RootLayout({children}) {
       lang="en"
       className={`${gudea.variable} ${fungis.variable} h-full antialiased`}
     >
-      <body className={`${gudea.className} min-h-full flex flex-col`}>
+      <body className={`${gudea.className} min-h-full`}>
         <Navigation />
-        <Header />
-        <Kategorier />
+        <Info />
+        <div className="lg:sticky top-0 full-bleed z-50">
+          <Header />
+          <Kategorier />
+        </div>
         <main>{children}</main>
         <Footer />
       </body>

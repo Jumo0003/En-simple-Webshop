@@ -6,7 +6,7 @@ const Menu = () => {
     <div
       popover="auto"
       id="menu"
-      className="bg-[#f1f6f6] w-[calc(100vw-2rem)] m-0 md:w-100 text-[#2e4565] menu-popover rounded-xl fixed mt-4 shadow-md"
+      className="bg-[#f1f6f6] w-[calc(100vw-2rem)] m-0 md:w-100 text-[#2e4565] menu-popover fixed mt-4 shadow-md"
     >
       <div className="flex flex-col gap-4">
         <div className="flex p-4 pb-0 justify-between">
