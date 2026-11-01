@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const TilbudBanner = async () => {
   const response = await fetch("https://dummyjson.com/products");
   const data = await response.json();
@@ -15,7 +17,7 @@ const TilbudBanner = async () => {
           <p className="bg-orange-300 ">{tilbud.discountPercentage}% rabat</p>
         </div>
         <div className="items-left">
-          <img src={tilbud.thumbnail} alt={tilbud.title} />
+          <Image width={300} height={300} src={tilbud.thumbnail} alt={tilbud.title} />
         </div>
       </div>
     </div>
