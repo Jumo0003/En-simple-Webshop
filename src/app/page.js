@@ -11,7 +11,7 @@ export default function Home() {
       <ProduktKarussel title="Home" category="home" />
       <ProduktKarussel title="Tech" category="tech" />
       <BilledTekst />
-      <BilledTekst />
+      <BilledTekst reverse />
     </>
   );
 }
