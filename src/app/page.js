@@ -7,7 +7,9 @@ export default function Home() {
   return (
     <>
       <TilbudBanner />
-      <ProduktKarussel />
+      <ProduktKarussel title="Over 15% discount" category="discount" />
+      <ProduktKarussel title="Home" category="home" />
+      <ProduktKarussel title="Tech" category="tech" />
       <BilledTekst />
       <BilledTekst />
     </>

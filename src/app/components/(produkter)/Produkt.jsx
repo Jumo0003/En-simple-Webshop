@@ -13,7 +13,7 @@ const Produkt = ({
   id,
 }) => {
   return (
-    <article className="bg-white shadow-xl cursor-pointer relative transition-colors duration-400 text-[#456695">
+    <article className="bg-white shadow-xl cursor-pointer relative transition-colors duration-400 text-[#456695]">
       <Image
         src={billede}
         width={300}
