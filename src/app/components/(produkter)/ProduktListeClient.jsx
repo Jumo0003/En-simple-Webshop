@@ -1,10 +1,23 @@
 "use client";
 
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Produkt from "@/app/components/(produkter)/Produkt";
 import IngenProdukter from "@/app/components/IngenProdukter";
+import ListeLoadingUI from "@/app/components/loading";
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default function ProduktListeClient({products}) {
+  const [lokalLoading, setLokalLoading] = useState(true);
+
+  useEffect(() => {
+    setLokalLoading(true);
+
+    delay(800).then(() => {
+      setLokalLoading(false);
+    });
+  }, [products]);
+
   const [filter, setFilter] = useState("all");
   const [sortering, setSortering] = useState("");
 
@@ -57,7 +70,7 @@ export default function ProduktListeClient({products}) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4">
-      <div className="grid grid-cols-2 md:grid-cols-1 justify-center gap-3 self-start h-fit md:sticky md:top-60">
+      <div className="grid grid-cols-2 md:grid-cols-1 justify-center gap-3 self-start h-fit md:sticky md:top-4">
         <button
           className="transition-colors shadow-xl duration-400 text-[#456695] bg-white px-8 hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out p-3"
           type="button"
@@ -124,7 +137,9 @@ export default function ProduktListeClient({products}) {
         </button>
       </div>
 
-      {alleProdukter.length === 0 ? (
+      {lokalLoading ? (
+        <ListeLoadingUI />
+      ) : alleProdukter.length === 0 ? (
         <IngenProdukter />
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 justify-center gap-4">
@@ -147,4 +162,8 @@ export default function ProduktListeClient({products}) {
   );
 }
 
-//knappers bg før: [#D4E7F1]
+// Først laver jeg en lokal loading state der starter som true og bruger useEffect til at vise loading først og så skjule det efter næsten et sekund
+// Delay-funktionen starter en timer (setTimeout). Når de ms er gået, kalder den resolve(), dvs signalerer at ventetiden er forbi, så koden efter .then(() => { ... }) bliver udført.
+// [products] står som dependency array, så hver gang produkt-arrayet ændre sig skal useEffects køre forfra
+
+// Linje 37: spread-operator, laver en uafhængig kopi af arrayet (alleProdukter), som kan sorteres og filtreres i

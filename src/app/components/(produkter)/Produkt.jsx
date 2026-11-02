@@ -4,6 +4,15 @@ import HeartBtn from "../(knapper)/HeartBtn";
 
 const Produkt = ({ produktnavn, brand, pris, tilbud, lager, billede, alt, id }) => {
   return (
+    <article className="bg-white shadow-xl cursor-pointer relative transition-colors duration-400 text-[#456695]">
+      <Image
+        src={billede}
+        width={300}
+        height={300}
+        alt={alt}
+        loading="eager"
+        className="bg-white w-full aspect-square"
+      />
     <article className="bg-white shadow-xl cursor-pointer relative transition-colors duration-400 text-[#456695">
       <Image src={billede} width={300} height={300} alt={alt} loading="eager" className="bg-white w-full aspect-square" />
       <div className="flex flex-col gap-2 p-4 text-left">

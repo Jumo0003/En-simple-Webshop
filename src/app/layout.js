@@ -36,7 +36,7 @@ export default function RootLayout({children}) {
       <body className={`${gudea.className} min-h-full`}>
         <Navigation />
         <Info />
-        <div className="lg:sticky top-0 full-bleed z-50">
+        <div className=" full-bleed z-50">
           <Header />
           <Kategorier />
         </div>
@@ -46,3 +46,5 @@ export default function RootLayout({children}) {
     </html>
   );
 }
+
+//lg:sticky top-0
