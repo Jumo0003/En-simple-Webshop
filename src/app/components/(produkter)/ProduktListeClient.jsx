@@ -2,8 +2,8 @@
 
 import {useState, useEffect} from "react";
 import Produkt from "@/app/components/(produkter)/Produkt";
-import IngenProdukter from "@/app/components/IngenProdukter";
-import ListeLoadingUI from "@/app/components/loading";
+import IngenProdukter from "@/app/components/(loading)/IngenProdukter";
+import ListeLoadingUI from "@/app/components/(loading)/loading";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

@@ -1,4 +1,4 @@
-import Kategori from "@/app/components/Kategori";
+import Kategori from "@/app/components/(kategorier)/Kategori";
 
 const Kategorier = () => {
   return (

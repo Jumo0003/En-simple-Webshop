@@ -1,5 +1,6 @@
 "use client";
 import {useCartStore} from "@/stores/useCartStore";
+import {FaMinus} from "react-icons/fa6";
 
 const DineVarer = () => {
   const kurv = useCartStore((state) => state.kurv);
@@ -10,7 +11,7 @@ const DineVarer = () => {
   );
 
   return (
-    <div className="flex flex-col gap-2 bg-white p-4 text-xl text-[#2e4565]">
+    <div className="flex flex-col gap-2 text-sm text-[#2e4565]">
       {kurv.map((produkt) => (
         <div
           key={produkt.id}
@@ -19,13 +20,13 @@ const DineVarer = () => {
           {produkt.antal} x {produkt.produktnavn}
           <button
             onClick={() => removeFromCart(produkt.id)}
-            className="bg-blue-400 px-3 py-1 rounded hover:bg-blue-200 text-blue-900"
+            className="px-3 py-1 rounded transition-colors duration-400 bg-[#b1d1e1] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out"
           >
-            Fjern
+            <FaMinus className="size-5" />
           </button>
         </div>
       ))}
-
+      <br />
       <p className="mt-auto">Total: {total.toFixed(2)} kr</p>
     </div>
   );

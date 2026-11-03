@@ -1,11 +1,11 @@
 import {Gudea} from "next/font/google";
 import "./globals.css";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
-import Kategorier from "@/app/components/Kategorier";
-import Navigation from "@/app/components/Navigation";
+import Header from "@/app/components/(alleSider)/Header";
+import Footer from "@/app/components/(alleSider)/Footer";
+import Kategorier from "@/app/components/(kategorier)/Kategorier";
+import Navigation from "@/app/components/(alleSider)/Navigation";
 import localFont from "next/font/local";
-import Info from "./components/InfoBånd";
+import Info from "./components/(alleSider)/InfoBånd";
 
 const gudea = Gudea({
   weight: ["400", "700"],

@@ -1,4 +1,4 @@
-import TilfojKnap from "../(knapper)/KurvKobKnapper";
+import KurvKobKnapper from "../(knapper)/KurvKobKnapper";
 import Image from "next/image";
 import HeartBtn from "../(knapper)/HeartBtn";
 import Link from "next/link";
@@ -48,9 +48,14 @@ const Produkt = ({
             </span>
           </div>
         </Link>
-        <TilfojKnap
-          product={{id, produktnavn, brand, pris, tilbud, lager, billede}}
-        />
+
+        <div className="flex flex-col gap-2 mt-auto">
+          <KurvKobKnapper
+            kurv="Add to cart"
+            køb="Buy now"
+            product={{id, produktnavn, brand, pris, tilbud, lager, billede}}
+          />
+        </div>
       </div>
       <HeartBtn
         product={{id, produktnavn, brand, pris, tilbud, lager, billede}}
