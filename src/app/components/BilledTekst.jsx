@@ -1,13 +1,13 @@
 import Image from "next/image";
 import butikbilled1 from "../../butikvaerdier.png";
 
-const BilledTekst = ({reverse}) => {
+const BilledTekst = ({reverse, video, button, width, grid}) => {
   return (
     <div
-      className={`flex justify-between gap-4 mb-8 text-[#2e4565] items-center ${reverse ? "flex-row-reverse" : "flex-row"}`}
+      className={`${grid ? "grid grid-cols-1 md:grid-cols-2" : "flex flex-col"} justify-between text-sm gap-4 mb-8 text-[#2e4565] items-center ${reverse ? "md:flex-row-reverse" : "md:flex-row"}`}
     >
       <Image
-        className="rounded-2xl max-w-125 h-auto"
+        className={`rounded-2xl ${width ? "md:max-w-125" : "w-full"} h-auto ${video ? "aspect-video" : "aspect-4/3"}`}
         src={butikbilled1}
         alt="generisk generet ai billed for Løtex omkring butikkens værdier"
       />
@@ -18,9 +18,8 @@ const BilledTekst = ({reverse}) => {
           totam, minima veritatis reiciendis beatae inventore voluptas,
           dignissimos natus iste excepturi sed expedita.
         </p>
-        <button className="text-white px-32 py-3 bg-blue-900 my-4  rounded-xl">
-          Læs mere
-        </button>
+        <br />
+        <div>{button}</div>
       </div>
     </div>
   );

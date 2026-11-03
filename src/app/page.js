@@ -12,8 +12,25 @@ export default function Home() {
       </div>
       <ProduktKarussel title="Home" category="home" />
       <ProduktKarussel title="Tech" category="tech" />
-      <BilledTekst />
-      <BilledTekst reverse />
+      <BilledTekst
+        video
+        width
+        button={
+          <button className="text-white px-32 py-3 bg-blue-900 my-4  rounded-xl">
+            Læs mere
+          </button>
+        }
+      />
+      <BilledTekst
+        reverse
+        width
+        video
+        button={
+          <button className="text-white px-32 py-3 bg-blue-900 my-4  rounded-xl">
+            Læs mere
+          </button>
+        }
+      />
     </>
   );
 }
