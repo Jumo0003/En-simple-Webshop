@@ -1,23 +1,32 @@
 "use client";
-import { useCartStore } from "@/stores/useCartStore";
+import {useCartStore} from "@/stores/useCartStore";
 
 const DineVarer = () => {
   const kurv = useCartStore((state) => state.kurv);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const total = kurv.reduce((sum, produkt) => sum + produkt.pris * produkt.antal, 0);
+  const total = kurv.reduce(
+    (sum, produkt) => sum + produkt.pris * produkt.antal,
+    0,
+  );
 
   return (
-    <div>
+    <div className="flex flex-col gap-2 bg-white p-4 text-xl text-[#2e4565]">
       {kurv.map((produkt) => (
-        <div key={produkt.id} className="flex justify-between items-center">
+        <div
+          key={produkt.id}
+          className="flex gap-2 items-center justify-between bg-[#D4E7F1] p-2"
+        >
           {produkt.antal} x {produkt.produktnavn}
-          <button onClick={() => removeFromCart(produkt.id)} className="bg-blue-400 px-3 py-1 rounded hover:bg-gray-200">
+          <button
+            onClick={() => removeFromCart(produkt.id)}
+            className="bg-blue-400 px-3 py-1 rounded hover:bg-blue-200 text-blue-900"
+          >
             Fjern
           </button>
         </div>
       ))}
 
-      <p>Total: {total.toFixed(2)} kr</p>
+      <p className="mt-auto">Total: {total.toFixed(2)} kr</p>
     </div>
   );
 };
