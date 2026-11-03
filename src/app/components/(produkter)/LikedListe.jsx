@@ -2,12 +2,14 @@
 
 import {useLikeStore} from "@/stores/useLikeStore";
 import KurvKobKnapper from "../(knapper)/KurvKobKnapper";
+import {FiShoppingCart} from "react-icons/fi";
+import {GiSwipeCard} from "react-icons/gi";
 
 export default function FavoriteList({overskrift}) {
   const likes = useLikeStore((state) => state.likes);
 
   return (
-    <div className="h-90 overflow-y-auto p-4 bg-white text-sm shadow-sm text-[#2e4565]">
+    <div className="h-90 overflow-y-auto text-sm text-[#2e4565]">
       <h2 className="text-xl font-bold mb-4">
         {overskrift}
         <span> ({likes.length})</span>
@@ -42,7 +44,13 @@ export default function FavoriteList({overskrift}) {
                 <b>{product.pris} USD</b>
               </span>
 
-              <KurvKobKnapper />
+              <div className="flex gap-2 mt-auto">
+                <KurvKobKnapper
+                  kurv={<FiShoppingCart size={18} />}
+                  køb={<GiSwipeCard size={18} />}
+                  product={product}
+                />
+              </div>
             </li>
           ))}
         </ul>

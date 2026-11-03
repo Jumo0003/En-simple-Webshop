@@ -2,9 +2,9 @@ import Logo from "@/app/components/(knapper)/Logo";
 import {FiSearch} from "react-icons/fi";
 import {SlMenu} from "react-icons/sl";
 import {FiShoppingCart} from "react-icons/fi";
-import KurvPopover from "@/app/components/KurvPopover";
-import LikedPopover from "@/app/components/LikedPopover";
-import MenuPopover from "@/app/components/MenuPopover";
+import KurvPopover from "@/app/components/(popovers)/KurvPopover";
+import LikedPopover from "@/app/components/(popovers)/LikedPopover";
+import MenuPopover from "@/app/components/(popovers)/MenuPopover";
 import {FaRegHeart} from "react-icons/fa";
 
 const Header = () => {
