@@ -14,8 +14,8 @@ const Produkt = ({
   id,
 }) => {
   return (
-    <Link href="/detaljevisning">
-      <article className="bg-white shadow-xl cursor-pointer relative transition-colors duration-400 text-[#456695]">
+    <article className="bg-white shadow-xl cursor-pointer relative transition-colors duration-400 text-[#456695]">
+      <Link href="/detaljevisning">
         <Image
           src={billede}
           width={300}
@@ -24,35 +24,38 @@ const Produkt = ({
           loading="eager"
           className="bg-white w-full aspect-square"
         />
+      </Link>
 
-        <div className="flex flex-col gap-2 p-4 text-left">
+      <div className="flex flex-col gap-2 p-4 text-left">
+        <Link href="/detaljevisning">
           <h2 className="font-bold text-2xl">{produktnavn}</h2>
           <p className="italic ">{brand}</p>
-          <p className="text-xl">
+          <p className="text-xl mb-2">
             <b>{pris}</b>
           </p>
-          <span className="bg-orange-300 px-2 py-1 rounded-xl max-w-content text-gray-700 font-bold">
-            {tilbud}
-          </span>
-          <span
-            className={
-              lager > 0
-                ? "bg-green-300 px-2 py-1 rounded-xl text-gray-700 font-bold"
-                : "bg-blue-300 px-2 py-1 rounded-xl text-gray-700 font-bold"
-            }
-          >
-            {lager > 0 ? "In stock" : "Sold out"}
-          </span>
-
-          <TilfojKnap
-            product={{id, produktnavn, brand, pris, tilbud, lager, billede}}
-          />
-        </div>
-        <HeartBtn
+          <div className="flex flex-col gap-2">
+            <span className="bg-orange-300 px-2 py-1 rounded-xl max-w-content text-gray-700 font-bold">
+              {tilbud}
+            </span>
+            <span
+              className={
+                lager > 0
+                  ? "bg-green-300 px-2 py-1 rounded-xl text-gray-700 font-bold"
+                  : "bg-blue-300 px-2 py-1 rounded-xl text-gray-700 font-bold"
+              }
+            >
+              {lager > 0 ? "In stock" : "Sold out"}
+            </span>
+          </div>
+        </Link>
+        <TilfojKnap
           product={{id, produktnavn, brand, pris, tilbud, lager, billede}}
         />
-      </article>
-    </Link>
+      </div>
+      <HeartBtn
+        product={{id, produktnavn, brand, pris, tilbud, lager, billede}}
+      />
+    </article>
   );
 };
 
