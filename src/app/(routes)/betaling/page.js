@@ -7,9 +7,11 @@ import BelobSektion from "@/app/components/BelobSektion";
 
 export default function Payment() {
   return (
-    <div className="text-7xl flex flex-col gap-8 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4">
-        <DineVarer />
+    <div className=" flex flex-col gap-8 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4 bg-blue-200 m-4">
+        <div className="bg-blue-400 m-4 gap-2 p-4">
+          <DineVarer detaljeret />
+        </div>
         <LikedListe overskrift="Mine Favoritter" />
       </div>
 
