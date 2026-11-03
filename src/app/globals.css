@@ -69,16 +69,16 @@ main > .full-bleed {
   }
 }
 
-.cart-button {
-  anchor-name: --cart-button;
-}
-
 .cart-popover,
 .menu-popover,
 .liked-popover {
   position: fixed;
   inset: auto;
   margin-top: 0.5rem;
+}
+
+.cart-button {
+  anchor-name: --cart-button;
 }
 
 .cart-popover {
