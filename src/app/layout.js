@@ -1,11 +1,11 @@
 import {Gudea} from "next/font/google";
 import "./globals.css";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
-import Kategorier from "@/app/components/Kategorier";
-import Navigation from "@/app/components/Navigation";
+import Header from "@/app/components/(alleSider)/Header";
+import Footer from "@/app/components/(alleSider)/Footer";
+import Kategorier from "@/app/components/(kategorier)/Kategorier";
+import Navigation from "@/app/components/(alleSider)/Navigation";
 import localFont from "next/font/local";
-import Info from "./components/InfoBånd";
+import Info from "./components/(alleSider)/InfoBånd";
 
 const gudea = Gudea({
   weight: ["400", "700"],
@@ -36,7 +36,7 @@ export default function RootLayout({children}) {
       <body className={`${gudea.className} min-h-full`}>
         <Navigation />
         <Info />
-        <div className="lg:sticky top-0 full-bleed z-50">
+        <div className=" full-bleed z-50">
           <Header />
           <Kategorier />
         </div>
@@ -46,3 +46,5 @@ export default function RootLayout({children}) {
     </html>
   );
 }
+
+//lg:sticky top-0

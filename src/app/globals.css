@@ -116,12 +116,18 @@ main > .full-bleed {
   }
 }
 
-/* Fjerner standardpilen i moderne browsere */
+/*fjerner standardpilen for details*/
 summary {
   list-style: none;
 }
 
-/* Fjerner standardpilen i ældre versioner af Safari og Chrome */
 summary::-webkit-details-marker {
   display: none;
+}
+
+.loading {
+  animation: loading infinite ease-in-out 1s;
+}
+
+@keyframes loading {
 }
