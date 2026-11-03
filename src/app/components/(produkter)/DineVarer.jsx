@@ -1,8 +1,10 @@
 "use client";
+import { useCartStore } from "@/stores/useCartStore";
+import Image from "next/image";
 import {useCartStore} from "@/stores/useCartStore";
 import {FaMinus} from "react-icons/fa6";
 
-const DineVarer = () => {
+const DineVarer = ({ detaljeret }) => {
   const kurv = useCartStore((state) => state.kurv);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const total = kurv.reduce(
