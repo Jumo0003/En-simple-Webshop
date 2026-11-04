@@ -9,14 +9,14 @@ const TilfojKnap = ({product, kurv, køb}) => {
     <>
       <button
         onClick={() => addToCart(product)}
-        className="rounded-sm w-full text-center p-2 text-md bg-[#cbaadf] hover:text-[#884fac] hover:bg-[#cdaadf] text-white transition-colors duration-400"
+        className="rounded-sm w-full text-center p-2 text-md bg-[#cbaadf] hover:text-[#884fac] hover:bg-[#cdaadf] active:text-[#884fac] active:bg-[#cdaadf] text-white transition-colors duration-400"
       >
         {kurv}
       </button>
       <Link
         href="/betaling"
         onClick={() => addToCart(product)}
-        className="rounded-sm w-full text-center p-2 text-md bg-[#AAC9DF] hover:text-[#4f85ac] hover:bg-[#AAC9DF] text-white transition-colors duration-400"
+        className="rounded-sm w-full text-center p-2 text-md bg-[#AAC9DF] hover:text-[#4f85ac] hover:bg-[#AAC9DF] active:text-[#4f85ac] active:bg-[#AAC9DF] text-white transition-colors duration-400"
       >
         {køb}
       </Link>

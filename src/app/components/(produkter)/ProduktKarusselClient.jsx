@@ -16,20 +16,16 @@ export default function ProduktKarusselClient({products}) {
       carouselRef.current.scrollLeft = firstMiddleItem.offsetLeft;
     }
 
-    // Ryd timeouten op, hvis komponenten fjernes, eller produkterne ændres.
     return () => window.clearTimeout(scrollTimeoutRef.current);
   }, [products.length]);
 
   function scroll(direction) {
-    // Hent karussellen og de første to kort for at beregne afstanden mellem kortene
     const carousel = carouselRef.current;
     const firstItem = itemsRef.current[0];
     const secondItem = itemsRef.current[1];
 
-    // Elementer kan mangle, mens komponenten stadig ikke er færdig med at blive renderet.
     if (!carousel || !firstItem || !secondItem) return;
 
-    // Afstanden inkluderer både produktkortets bredde og mellemrummet til næste kort.
     const itemStep = secondItem.offsetLeft - firstItem.offsetLeft;
 
     carousel.scrollBy({
@@ -47,17 +43,13 @@ export default function ProduktKarusselClient({products}) {
       const firstMiddleItem = itemsRef.current[products.length];
       const firstLastCopyItem = itemsRef.current[products.length * 2];
 
-      // Afbryd hvis referencerne ikke findes
       if (!carousel || !firstMiddleItem || !firstLastCopyItem) return;
 
-      // Beregn begyndelsen og slutningen på det område, hvor den originale liste ligger.
       const middleStart = firstMiddleItem.offsetLeft;
       const middleEnd = firstLastCopyItem.offsetLeft;
 
-      // De to kopier af listen har samme bredde som midterlisten.
       const copyWidth = middleEnd - middleStart;
 
-      // Flytter positionen én listebredde frem og tilbage.
       if (carousel.scrollLeft < middleStart) {
         carousel.scrollLeft += copyWidth;
       } else if (carousel.scrollLeft >= middleEnd) {
@@ -66,14 +58,11 @@ export default function ProduktKarusselClient({products}) {
     }, 120);
   }
 
-  // Tre gentagelser giver en kopi på hver side af den egentlige liste
   const repeatedProducts = [...products, ...products, ...products];
 
   return (
     <div className="w-full">
-      {/* Knapperne bruger scroll-funktionen til at flytte karussellen ét kort ad gangen. */}
       <div className="mb-3 flex gap-2">
-        {/* aria-label gør knappen forståelig for hjælpemidler som skærmlæsere. */}
         <button
           type="button"
           aria-label="Rul produkter tilbage"
@@ -92,27 +81,19 @@ export default function ProduktKarusselClient({products}) {
         </button>
       </div>
 
-      {/* Dette element er selve karussellen: vandret scroll, snap til kort og skjult scrollbar. */}
       <div
         ref={carouselRef}
         onScroll={handleScroll}
         className="hide-scrollbar scrollbar-none flex w-full snap-x snap-mandatory gap-4 overflow-x-auto"
       >
-        {/* Hver scroll-bevægelse kan udløse en korrektion ved kopiernes grænser. */}
-        {/* Render de tre lister; index bruges til at gemme hvert korts DOM-reference. */}
-
         {repeatedProducts.map((product, index) => (
-          // Index adskiller også de tre visuelle kopier af samme produkt.
-
           <div
             key={`${index}-${product.id}`}
             ref={(element) => {
               itemsRef.current[index] = element;
             }}
-            className="w-60 h-full shrink-0 snap-start"
+            className="w-60 h-full shrink-0 snap-center md:snap-start"
           >
-            {/* Kortet må ikke krympe, og snap-start får det til at flugte ved scroll-stop. */}
-            {/* Genbrug produktkortets visning og send produktdata videre som props. */}
             <Produkt
               id={product.id}
               billede={product.thumbnail}
@@ -130,14 +111,6 @@ export default function ProduktKarusselClient({products}) {
   );
 }
 
-// useEffect bruges til at placere karussellen, når produkterne er renderet i browseren.
-// useRef gemmer referencer til DOM-elementer uden at starte en ny render, når de ændres.
-
-// carouselRef: reference til scrollbare beholder med alle produktkortene
-// Gemmer en reference til hvert produktkort i samme rækkefølge som i repeatedProducts.
-
-//scrollTimeoutRef: Gemmer timeout
-
-// Produkterne vises tre gange: kopi, original liste og kopi.
-// products.length er indeks for det første produkt i den midterste liste.
-//firstMiddleItem er midterste række af produkter;
+// Tre produktlister giver en gentagende karussel, der starter på den midterste liste
+// Knapperne ruller ét kort ad gangen; scrollpositionen korrigeres ved kopiernes grænser
+// DOM-referencer og timeout styrer scroll uden unødige renders og ryddes op ved afmontering
