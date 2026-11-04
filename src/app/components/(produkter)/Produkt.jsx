@@ -3,7 +3,7 @@ import Image from "next/image";
 import HeartBtn from "../(knapper)/HeartBtn";
 import Link from "next/link";
 
-const Produkt = ({ produktnavn, brand, pris, tilbud, lager, billede, alt, id }) => {
+const Produkt = ({ produktnavn, brand, pris, tilbud, lager, billede, alt, id, rabat }) => {
   return (
     <article className="bg-white shadow-xl cursor-pointer relative transition-colors duration-400 text-[#456695]">
       <Link href={`/detaljevisning/${id}`}>
@@ -24,7 +24,7 @@ const Produkt = ({ produktnavn, brand, pris, tilbud, lager, billede, alt, id }) 
         </Link>
 
         <div className="flex flex-col gap-2 mt-auto">
-          <KurvKobKnapper kurv="Add to cart" køb="Buy now" product={{ id, produktnavn, brand, pris, tilbud, lager, billede }} />
+          <KurvKobKnapper kurv="Add to cart" køb="Buy now" product={{ id, produktnavn, brand, pris, tilbud, lager, billede, rabat }} />
         </div>
       </div>
       <HeartBtn product={{ id, produktnavn, brand, pris, tilbud, lager, billede }} />
