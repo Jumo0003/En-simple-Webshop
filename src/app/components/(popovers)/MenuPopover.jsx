@@ -21,19 +21,19 @@ const Menu = () => {
             href="/"
             className="transition-colors duration-400 hover:bg-[#b1d1e1] p-4 py-3"
           >
-            Forside
+            Home
           </Link>
           <Link
             href="/produkter"
             className="transition-colors duration-400 hover:bg-[#b1d1e1] p-4 py-3"
           >
-            Alle produkter
+            All products
           </Link>
           <Link
             href="/betaling"
             className="transition-colors duration-400 hover:bg-[#b1d1e1] p-4 py-3"
           >
-            Min kurv
+            Payment
           </Link>
         </nav>
       </div>
