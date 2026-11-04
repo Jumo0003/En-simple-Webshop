@@ -12,7 +12,7 @@ export default async function DetailView({params}) {
     produkt.reviews.length;
 
   return (
-    <div className="py-8 text-[#2e4565] bg-blue-50 p-4">
+    <div className="py-8 text-[#2e4565] bg-blue-50 p-4 mt-4">
       <div className="flex gap-8">
         <Image
           src={produkt.images[0]}
