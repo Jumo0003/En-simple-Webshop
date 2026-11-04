@@ -29,6 +29,7 @@ export default async function DetailView({ params }) {
                 pris: produkt.price,
                 billede: produkt.thumbnail,
                 lager: produkt.stock,
+                rabat: produkt.discountPercentage,
               }}
             />
           </div>

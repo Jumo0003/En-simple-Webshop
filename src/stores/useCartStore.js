@@ -24,4 +24,8 @@ export const useCartStore = create((set, get) => ({
     const kurv = get().kurv;
     return kurv.reduce((sum, produkt) => sum + produkt.pris * produkt.antal, 0);
   },
+  getBesparelse: () => {
+    const kurv = get().kurv;
+    return kurv.reduce((sum, produkt) => sum + produkt.pris * (produkt.rabat / 100) * produkt.antal, 0);
+  },
 }));
