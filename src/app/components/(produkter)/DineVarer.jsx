@@ -6,7 +6,7 @@ import Image from "next/image";
 const DineVarer = ({ detaljeret }) => {
   const kurv = useCartStore((state) => state.kurv);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const total = kurv.reduce((sum, produkt) => sum + produkt.pris * produkt.antal, 0);
+  const total = useCartStore((state) => state.getTotal());
 
   return (
     <div className="flex flex-col gap-2 text-sm text-[#2e4565]">
