@@ -16,11 +16,11 @@ const BelobIAlt = () => {
         <p className="text-3xl font-bold">{besparelse.toFixed(2)}</p>
       </div>
       <div className="flex py-4 justify-between border-b border-[#2e45652d]">
-        <h2>Price in total:</h2>
+        <h2>Pris:</h2>
         <p className="text-3xl font-bold">{total.toFixed(2)}</p>
       </div>
       <div className="flex py-4 justify-between border-b border-[#2e45652d]">
-        <h2>Stutpris:</h2>
+        <h2>Total pris:</h2>
         <p className="text-3xl font-bold">{slutpris.toFixed(2)}</p>
       </div>
     </section>
