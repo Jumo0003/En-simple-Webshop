@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export const useCartStore = create((set) => ({
+export const useCartStore = create((set, get) => ({
   kurv: [],
   addToCart: (product) =>
     set((state) => {
@@ -20,4 +20,12 @@ export const useCartStore = create((set) => ({
     set((state) => ({
       kurv: state.kurv.filter((vare) => vare.id !== id),
     })),
+  getTotal: () => {
+    const kurv = get().kurv;
+    return kurv.reduce((sum, produkt) => sum + produkt.pris * produkt.antal, 0);
+  },
+  getBesparelse: () => {
+    const kurv = get().kurv;
+    return kurv.reduce((sum, produkt) => sum + produkt.pris * (produkt.rabat / 100) * produkt.antal, 0);
+  },
 }));
