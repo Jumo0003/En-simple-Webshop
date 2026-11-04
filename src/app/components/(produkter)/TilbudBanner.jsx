@@ -18,10 +18,10 @@ const TilbudBanner = async () => {
             {tilbud.title}
           </h2>
           <p className="bg-blue-200 px-4 py-2 rounded-sm text-4xl text-blue-900">
-            {tilbud.price}kr
+            {tilbud.price} $
           </p>
-          <p className="bg-orange-300 p-4 text-2xl">
-            {tilbud.discountPercentage}% rabat
+          <p className="bg-orange-300 text-orange-900 p-4 text-2xl">
+            {tilbud.discountPercentage}% discount
           </p>
         </div>
         <div className="items-left">

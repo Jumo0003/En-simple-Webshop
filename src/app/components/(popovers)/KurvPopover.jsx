@@ -22,7 +22,7 @@ const KurvPopover = () => {
           href="/betaling"
           className="transition-colors duration-400 bg-[#b1d1e1] text-center text-xl hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-xl p-3  text-white"
         >
-          Betal nu
+          Pay now
         </Link>
       </div>
     </div>

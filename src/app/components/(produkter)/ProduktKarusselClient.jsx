@@ -119,7 +119,7 @@ export default function ProduktKarusselClient({products}) {
               produktnavn={product.title}
               brand={product.brand}
               pris={product.price}
-              tilbud={`Tilbud: ${product.discountPercentage}%`}
+              tilbud={`Discount: ${product.discountPercentage}%`}
               lager={product.stock}
               alt={product.title}
             />

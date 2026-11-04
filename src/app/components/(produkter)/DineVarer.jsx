@@ -27,7 +27,7 @@ const DineVarer = () => {
         </div>
       ))}
       <br />
-      <p className="mt-auto">Total: {total.toFixed(2)} kr</p>
+      <p className="mt-auto">Total: {total.toFixed(2)} USD</p>
     </div>
   );
 };
