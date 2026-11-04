@@ -16,9 +16,7 @@ export default function FavoriteList({overskrift}) {
       </h2>
 
       {likes.length === 0 ? (
-        <p className="text-gray-500">
-          Du har ikke tilføjet nogen favoritter endnu.
-        </p>
+        <p className="text-gray-500">You have not added any favorites yet.</p>
       ) : (
         <ul className="flex flex-col gap-2">
           {likes.map((product) => (

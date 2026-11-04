@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/app/components/(alleSider)/Header";
 import Footer from "@/app/components/(alleSider)/Footer";
 import Kategorier from "@/app/components/(kategorier)/Kategorier";
-import Navigation from "@/app/components/(alleSider)/Navigation";
 import localFont from "next/font/local";
 import Info from "./components/(alleSider)/InfoBånd";
 
@@ -34,7 +33,6 @@ export default function RootLayout({children}) {
       className={`${gudea.variable} ${fungis.variable} h-full antialiased`}
     >
       <body className={`${gudea.className} min-h-full`}>
-        <Navigation />
         <Info />
         <div className=" full-bleed z-50">
           <Header />

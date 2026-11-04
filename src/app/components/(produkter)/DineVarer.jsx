@@ -33,8 +33,8 @@ const DineVarer = ({ detaljeret }) => {
           </button>
         </div>
       ))}
-
-      <p className="mt-auto">Total: {total.toFixed(2)} kr</p>
+      <br />
+      <p className="mt-auto">Total: {total.toFixed(2)} USD</p>
     </div>
   );
 };
