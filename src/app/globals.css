@@ -142,7 +142,7 @@ summary::-webkit-details-marker {
   justify-content: space-between; /* justify-between */
   padding: 1.5rem; /* p-6 */
   color: white; /* text-white */
-  background-color: var(--text-color); /* bg-black */
+  background-color: #4f85ac; /* bg-black */
   width: 18rem; /* w-72 */
   height: 20rem; /* h-80 */
   border-radius: 1.5rem; /* rounded-3xl */
