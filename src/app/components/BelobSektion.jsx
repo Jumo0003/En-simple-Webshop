@@ -1,5 +1,5 @@
 "use client";
-import { useCartStore } from "@/stores/useCartStore";
+import {useCartStore} from "@/stores/useCartStore";
 
 const BelobIAlt = () => {
   const total = useCartStore((state) => state.getTotal());
@@ -12,15 +12,15 @@ const BelobIAlt = () => {
         <p className="italic">Free</p>
       </div>
       <div className="flex py-4 justify-between border-b border-[#2e45652d]">
-        <p>Rabat:</p>
+        <p>Discount:</p>
         <p className="text-3xl font-bold">{besparelse.toFixed(2)}</p>
       </div>
       <div className="flex py-4 justify-between border-b border-[#2e45652d]">
-        <h2>Pris:</h2>
+        <h2>Price:</h2>
         <p className="text-3xl font-bold">{total.toFixed(2)}</p>
       </div>
       <div className="flex py-4 justify-between border-b border-[#2e45652d]">
-        <h2>Total pris:</h2>
+        <h2>Total price:</h2>
         <p className="text-3xl font-bold">{slutpris.toFixed(2)}</p>
       </div>
     </section>

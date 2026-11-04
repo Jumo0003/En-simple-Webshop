@@ -11,7 +11,7 @@ const KurvPopover = () => {
     >
       <div className="flex flex-col gap-4">
         <div className="flex justify-between">
-          <h1 className="font-bold text-2xl">Din Kurv</h1>
+          <h1 className="font-bold text-2xl">Your cart</h1>
           <button popoverTarget="kurv" popoverTargetAction="hide">
             <FaMinus className="size-8" />
           </button>
