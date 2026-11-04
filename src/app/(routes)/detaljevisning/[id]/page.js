@@ -13,13 +13,13 @@ export default async function DetailView({params}) {
 
   return (
     <div className="py-8 text-[#2e4565] bg-blue-50 p-4 mt-4">
-      <div className="flex gap-8">
+      <div className="flex flex-col md:flex-row gap-8">
         <Image
           src={produkt.images[0]}
           width={400}
           height={400}
           alt={produkt.title}
-          className="bg-blue-100 my-5"
+          className="bg-blue-100 md:mb-4"
         />
         <div className="max-w-125 flex flex-col mt-4">
           <div className="flex flex-col gap-3">
@@ -40,7 +40,7 @@ export default async function DetailView({params}) {
               <span> ({gennemsnit.toFixed(1)})</span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row gap-2 mt-auto mb-4">
+          <div className="flex flex-col md:flex-row gap-2 mt-4 md:mt-auto mb-4">
             <KurvKobKnapper
               kurv="Add to cart"
               køb="Buy now"

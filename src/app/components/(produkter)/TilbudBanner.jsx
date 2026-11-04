@@ -12,8 +12,8 @@ const TilbudBanner = async () => {
   const tilbud = HojDiscount[RandomdiscounItem];
   return (
     <div className="full-bleed bg-[url(/bannerbg.webp)] bg-cover bg-center m-4 rounded-2xl">
-      <div className="flex justify-center">
-        <div className="items-start justify-start p-12 gap-4 contain-content  my-5 flex flex-col m-4">
+      <div className="flex flex-col md:flex-row justify-center">
+        <div className="items-start justify-center md:justify-start md:p-12 gap-4 contain-content my-5 flex flex-col m-4">
           <h2 className="font-bold px-4 py-2 rounded-sm bg-blue-300 text-4xl text-blue-900">
             {tilbud.title}
           </h2>

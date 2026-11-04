@@ -142,7 +142,7 @@ export default function ProduktListeClient({products}) {
       ) : alleProdukter.length === 0 ? (
         <IngenProdukter />
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 justify-center gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-4">
           {alleProdukter.map((product) => (
             <Produkt
               key={product.id}

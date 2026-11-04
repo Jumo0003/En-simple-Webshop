@@ -3,7 +3,7 @@ import Logo from "@/app/components/(knapper)/Logo";
 const Footer = () => {
   return (
     <div className="full-bleed text-[#2e4565] bg-head-foot mt-4">
-      <footer className="px-4 py-8 flex flex-col justify-center md:flex-row gap-4 items-start md:justify-between">
+      <footer className="flex flex-col p-4 md:py-8 md:flex-row gap-4 items-center md:items-start justify-center md:justify-between">
         <div>
           <h4 className="font-bold">Contact</h4>
           <ul>
@@ -17,7 +17,7 @@ const Footer = () => {
             <h3 className="font-bold">Opening hours</h3>
             <h5>Mon - Sun</h5>
           </div>
-          <ul className="gap-1">
+          <ul className="flex flex-col gap-1">
             <li>07:30-22:30</li>
             <li>07:30-22:30</li>
             <li>07:30-22:30</li>
@@ -27,7 +27,9 @@ const Footer = () => {
             <li>07:30-22:30</li>
           </ul>
         </div>
-        <Logo />
+        <div className="mt-8">
+          <Logo />
+        </div>
       </footer>
     </div>
   );

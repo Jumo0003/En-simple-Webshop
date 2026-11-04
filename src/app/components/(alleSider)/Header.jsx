@@ -13,7 +13,7 @@ const Header = () => {
     <div className="full-bleed bg-[#C7E4F2] px-4 py-8">
       <header className="flex flex-col sm:flex-row gap-4 items-center justify-between">
         <Logo />
-        <div className="flex gap-4 w-full">
+        <div className="flex flex-col md:flex-row gap-4 w-full">
           <form action="/produkter" className="flex items-center w-full">
             <input
               type="search"
@@ -29,7 +29,7 @@ const Header = () => {
             </button>
           </form>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 justify-center">
             <button
               popoverTarget="kurv"
               className="cart-button transition-colors duration-400 bg-[#9FC5D9] hover:bg-[#94b9cd] active:bg-[#94b9cd] hover:text-[#456695] active:text-[#456695] ease-in-out rounded-full p-3  text-white"
