@@ -131,3 +131,48 @@ summary::-webkit-details-marker {
 
 @keyframes loading {
 }
+
+.cookie-consent-popup {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  justify-content: space-between; /* justify-between */
+  padding: 1.5rem; /* p-6 */
+  color: white; /* text-white */
+  background-color: var(--text-color); /* bg-black */
+  width: 18rem; /* w-72 */
+  height: 20rem; /* h-80 */
+  border-radius: 1.5rem; /* rounded-3xl */
+}
+
+.cookie-consent-popup-header {
+  display: flex; /* flex */
+  justify-content: space-between; /* justify-between */
+}
+
+.cookie-consent-popup-footer {
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+}
+
+.cookie-consent-popup-paragraph {
+  line-height: 2rem; /* leading-8 */
+  font-size: 25px; /* text-[25px] */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.cookie-consent-popup-cta {
+  padding: 0.75rem; /* p-3 */
+  font-size: 1.125rem; /* text-lg */
+  color: black; /* text-black */
+  background-color: #f8fafc; /* bg-slate-50 */
+  border-radius: 0.5rem; /* rounded-lg */
+  height: 3.75rem; /* h-15 (custom height in Tailwind) */
+}
+
+.pointer {
+  cursor: pointer;
+}
