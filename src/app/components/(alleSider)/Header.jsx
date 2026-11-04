@@ -1,3 +1,4 @@
+"use client";
 import Logo from "@/app/components/(knapper)/Logo";
 import {FiSearch} from "react-icons/fi";
 import {SlMenu} from "react-icons/sl";
